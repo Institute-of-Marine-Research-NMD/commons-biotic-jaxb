@@ -7,6 +7,8 @@
 
     <xs:element name="missions" type="MissionsType" />
 
+    <xs:element name="mission" type="MissionType" />
+
     <!--
         Missions type.
     -->
@@ -21,14 +23,18 @@
     -->
     <xs:complexType name="MissionType">
         <xs:sequence>
+            <xs:element name="cruise" type="xs:string" />
+            <xs:element name="startdate" type="xs:string" />
+            <xs:element name="stopdate" type="xs:string" />
+            <xs:element name="purpose" type="xs:string" />
             <xs:element name="fishstation" type="FishStationType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="year" type="xs:integer" use="optional" />
-        <xs:attribute name="missiontype" type="xs:string" use="required" />
+        <xs:attribute name="missiontype" type="xs:string" use="optional" />
         <xs:attribute name="missiontypename" type="xs:string" use="optional" />
         <xs:attribute name="callsignal" type="xs:string" use="optional" />
-        <xs:attribute name="platform" type="xs:string" use="required" />
-        <xs:attribute name="missionnumber" type="xs:string" use="required" />
+        <xs:attribute name="platform" type="xs:string" use="optional" />
+        <xs:attribute name="missionnumber" type="xs:string" use="optional" />
     </xs:complexType>
 
     <!--
@@ -39,35 +45,15 @@
             <xs:element name="nation" type="StringDescriptionType" minOccurs="0"/>
             <xs:element name="platform" type="StringDescriptionType" minOccurs="0"/>
             <xs:element name="station" type="xs:integer" minOccurs="0"/>
-            <xs:element name="startdate" minOccurs="0">
-                <xs:simpleType>
-                    <xs:union>
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string"/>
-                        </xs:simpleType>
-                        <xs:simpleType>
-                            <xs:restriction base="xs:date" />
-                        </xs:simpleType>
-                    </xs:union>
-                </xs:simpleType>
-            </xs:element>
+            <xs:element name="startdate" type="xs:string" minOccurs="0" />
             <xs:element name="starttime" type="xs:time" minOccurs="0"/>
-            <xs:element name="stopdate" minOccurs="0">
-                <xs:simpleType>
-                    <xs:union>
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string"/>
-                        </xs:simpleType>
-                        <xs:simpleType>
-                            <xs:restriction base="xs:date" />
-                        </xs:simpleType>
-                    </xs:union>
-                </xs:simpleType>
-            </xs:element>
+            <xs:element name="stopdate" type="xs:string" minOccurs="0" />
             <xs:element name="stoptime" type="xs:time" minOccurs="0"/>
             <xs:element name="stationtype" type="StringDescriptionType" minOccurs="0"/>
             <xs:element name="latitudestart" type="xs:decimal" minOccurs="0"/>
             <xs:element name="longitudestart" type="xs:decimal" minOccurs="0"/>
+            <xs:element name="latitudeend" type="xs:decimal" minOccurs="0"/>
+            <xs:element name="longitudeend" type="xs:decimal" minOccurs="0"/>
             <xs:element name="system" type="StringDescriptionType" minOccurs="0"/>
             <xs:element name="area" type="StringDescriptionType" minOccurs="0"/>
             <xs:element name="location" type="StringDescriptionType" minOccurs="0"/>
@@ -81,9 +67,12 @@
             <xs:element name="direction" type="xs:decimal" minOccurs="0"/>
             <xs:element name="gearspeed" type="xs:decimal" minOccurs="0"/>
             <xs:element name="startlog" type="xs:decimal" minOccurs="0"/>
+            <xs:element name="stoplog" type="xs:decimal" minOccurs="0"/>
             <xs:element name="distance" type="xs:decimal" minOccurs="0"/>
             <xs:element name="gearcondition" type="StringDescriptionType" minOccurs="0"/>
             <xs:element name="trawlquality" type="StringDescriptionType" minOccurs="0"/>
+            <xs:element name="trawlopening" type="xs:decimal" minOccurs="0"/>
+            <xs:element name="doorspread" type="xs:decimal" minOccurs="0"/>
             <xs:element name="wirelength" type="xs:integer" minOccurs="0"/>
             <xs:element name="catchsample" type="CatchSampleType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
@@ -144,7 +133,7 @@
             <xs:element name="liverweight" type="xs:decimal" minOccurs="0"/>
             <xs:element name="stomachweight" type="xs:decimal" minOccurs="0"/>
             <xs:element name="agedetermination" type="AgeDeterminationType" minOccurs="0" maxOccurs="unbounded" />
-            <xs:element name="tag" type="TagType" />
+            <xs:element name="tag" type="TagType" minOccurs="0"  />
         </xs:sequence>
         <xs:attribute name="specimenno" type="xs:integer" use="required" />
     </xs:complexType>
@@ -154,7 +143,7 @@
     -->
     <xs:complexType name="AgeDeterminationType">
         <xs:sequence>
-            <xs:element name="age" type="xs:integer" />
+            <xs:element name="age" type="xs:integer" minOccurs="0" />
             <xs:element name="spawningage" type="xs:integer" minOccurs="0"/>
             <xs:element name="spawningzones" type="xs:integer" minOccurs="0"/>
             <xs:element name="readability" type="StringDescriptionType" minOccurs="0"/>
@@ -184,7 +173,7 @@
             <xs:element name="digestion" type="StringDescriptionType" minOccurs="0" />
             <xs:element name="totalcount" type="xs:integer" minOccurs="0" />
             <xs:element name="weightresolution" type="xs:integer" minOccurs="0" />
-            <xs:element name="totalweight" type="xs:decimal" minOccurs="0" />
+            <xs:element name="totalweight" type="xs:string" minOccurs="0" />
             <xs:element name="interval" type="StringDescriptionType" minOccurs="0" />
             <xs:element name="devstage" type="StringDescriptionType" minOccurs="0" />
             <xs:element name="lengthmeasurement" type="StringDescriptionType" minOccurs="0" />
