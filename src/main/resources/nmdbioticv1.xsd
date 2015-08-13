@@ -46,9 +46,9 @@
             <xs:element name="platform" type="StringDescriptionType" minOccurs="0"/>
             <xs:element name="station" type="xs:integer" minOccurs="0"/>
             <xs:element name="startdate" type="xs:string" minOccurs="0" />
-            <xs:element name="starttime" type="xs:time" minOccurs="0"/>
+            <xs:element name="starttime" type="xs:string" minOccurs="0"/>
             <xs:element name="stopdate" type="xs:string" minOccurs="0" />
-            <xs:element name="stoptime" type="xs:time" minOccurs="0"/>
+            <xs:element name="stoptime" type="xs:string" minOccurs="0"/>
             <xs:element name="stationtype" type="StringDescriptionType" minOccurs="0"/>
             <xs:element name="latitudestart" type="xs:decimal" minOccurs="0"/>
             <xs:element name="longitudestart" type="xs:decimal" minOccurs="0"/>
