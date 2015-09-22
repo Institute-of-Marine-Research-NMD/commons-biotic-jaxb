@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!--
+    Container for all valid cruise xsds.
+-->
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+           <xs:import namespace="http://www.imr.no/formats/nmdbiotic/v1" schemaLocation="bioticv1.xsd" />
+</xs:schema>

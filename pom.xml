@@ -36,14 +36,25 @@
                         </goals>
                         <configuration>
                             <packageLevelAnnotations>false</packageLevelAnnotations>
-                            <schemaDirectory>${basedir}/src/main/resources</schemaDirectory>
+                            <schemas>
+                                <schema>
+                                    <fileset>
+                                        <directory>${basedir}/src/main/resources</directory>
+                                        <includes>
+                                            <include>bioticv1.xsd</include>
+                                        </includes>
+                                        <excludes>
+                                            <exclude>*.*</exclude>
+                                        </excludes>
+                                    </fileset>
+                                </schema>
+                            </schemas>
                             <forceRegenerate>true</forceRegenerate>
                             <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
                             <verbose>true</verbose>
                             <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
                             <episode>true</episode>
                             <extension>true</extension>
-                            <generatePackage>no.imr.nmdapi.generic.nmdbiotic.domain.v1</generatePackage>
                             <args>
                                 <arg>-Xannotate</arg>
                                 <arg>-Xnamespace-prefix</arg>
