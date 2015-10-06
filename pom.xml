@@ -20,14 +20,14 @@
     </repositories>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jaxb.version>2.1.17</jaxb.version>
+        <jaxb.version>2.2.11</jaxb.version>
         <additionalparam>-Xdoclint:none</additionalparam>
     </properties>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb21-plugin</artifactId>
+                <artifactId>maven-jaxb22-plugin</artifactId>
                 <version>0.12.3</version>
                 <executions>
                     <execution>
@@ -35,30 +35,31 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <packageLevelAnnotations>false</packageLevelAnnotations>
-                            <schemas>
-                                <schema>
-                                    <fileset>
-                                        <directory>${basedir}/src/main/resources</directory>
-                                        <includes>
-                                            <include>bioticv1.xsd</include>
-                                        </includes>
-                                        <excludes>
-                                            <exclude>*.*</exclude>
-                                        </excludes>
-                                    </fileset>
-                                </schema>
-                            </schemas>
-                            <forceRegenerate>true</forceRegenerate>
-                            <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
-                            <verbose>true</verbose>
-                            <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
-                            <episode>true</episode>
-                            <extension>true</extension>
-                            <args>
-                                <arg>-Xannotate</arg>
-                                <arg>-Xnamespace-prefix</arg>
-                            </args>
+                        <packageLevelAnnotations>false</packageLevelAnnotations>
+                        <schemas>
+                            <schema>
+                                <fileset>
+                                    <directory>${basedir}/src/main/resources</directory>
+                                    <includes>
+                                        <include>bioticv1.xsd</include>
+                                    </includes>
+                                    <excludes>
+                                        <exclude>*.*</exclude>
+                                    </excludes>
+                                </fileset>
+                            </schema>
+                        </schemas>
+                        <forceRegenerate>true</forceRegenerate>
+                        <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
+                        <verbose>true</verbose>
+                        <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
+                        <episode>true</episode>
+                        <extension>true</extension>
+                        <args>
+                            <arg>-Xannotate</arg>
+                            <arg>-Xnamespace-prefix</arg>
+                            <arg>-npa</arg>
+                        </args>
                         </configuration>
                     </execution>
                 </executions>
