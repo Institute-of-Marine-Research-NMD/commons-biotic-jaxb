@@ -50,7 +50,7 @@
                             </fileset>
                         </schema>
                     </schemas>
-                    <packageLevelAnnotations>true</packageLevelAnnotations>
+                    <packageLevelAnnotations>false</packageLevelAnnotations>
                     <forceRegenerate>false</forceRegenerate>
                     <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
                     <verbose>true</verbose>
