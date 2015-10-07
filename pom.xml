@@ -28,46 +28,44 @@
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb22-plugin</artifactId>
-                <version>0.12.3</version>
+                <version>0.13.0</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>generate</goal>
                         </goals>
+                        <configuration>
+                            <schemas>
+                                <schema>
+                                    <fileset>
+                                        <directory>${basedir}/src/main/resources</directory>
+                                        <includes>
+                                            <include>bioticv1.xsd</include>
+                                        </includes>
+                                        <excludes>
+                                            <exclude>*.*</exclude>
+                                        </excludes>
+                                    </fileset>
+                                </schema>
+                            </schemas>
+                            <forceRegenerate>false</forceRegenerate>
+                            <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
+                            <verbose>true</verbose>
+                            <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
+                            <episode>true</episode>
+                            <extension>true</extension>
+                            <args>
+                                <arg>-Xannotate</arg>
+                                <arg>-Xnamespace-prefix</arg>
+                            </args>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <schemas>
-                        <schema>
-                            <fileset>
-                                <directory>${basedir}/src/main/resources</directory>
-                                <includes>
-                                    <include>bioticv1.xsd</include>
-                                </includes>
-                                <excludes>
-                                    <exclude>*.*</exclude>
-                                </excludes>
-                            </fileset>
-                        </schema>
-                    </schemas>
-                    <packageLevelAnnotations>false</packageLevelAnnotations>
-                    <forceRegenerate>false</forceRegenerate>
-                    <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
-                    <verbose>true</verbose>
-                    <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
-                    <episode>true</episode>
-                    <extension>true</extension>
-                    <args>
-                        <arg>-Xannotate</arg>
-                        <arg>-Xnamespace-prefix</arg>
-                        <arg>-npa</arg>
-                    </args>
-                </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics-annotate</artifactId>
-                        <version>0.6.4</version>
+                        <version>1.0.2</version>
                     </dependency>
                     <dependency>
                         <groupId>com.sun.codemodel</groupId>
