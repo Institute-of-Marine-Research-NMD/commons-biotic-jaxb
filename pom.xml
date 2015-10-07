@@ -58,6 +58,7 @@
                     <episode>true</episode>
                     <extension>true</extension>
                     <args>
+                        <arg>-extension</arg>
                         <arg>-Xannotate</arg>
                         <arg>-Xnamespace-prefix</arg>
                         <arg>-npa</arg>
