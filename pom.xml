@@ -37,7 +37,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <packageLevelAnnotations>false</packageLevelAnnotations>
                     <schemas>
                         <schema>
                             <fileset>
@@ -51,7 +50,8 @@
                             </fileset>
                         </schema>
                     </schemas>
-                    <forceRegenerate>true</forceRegenerate>
+                    <packageLevelAnnotations>true</packageLevelAnnotations>
+                    <forceRegenerate>false</forceRegenerate>
                     <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
                     <verbose>true</verbose>
                     <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
