@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.imr.nmd.commons.biotic.jaxb</groupId>
     <artifactId>commons-biotic-jaxb</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Commons - Biotic JaxB</name>
     <repositories>
@@ -123,7 +123,7 @@
         <connection>scm:git:git@github.com:Institute-of-Marine-Research-NMD/commons-biotic-jaxb.git</connection>
         <url>scm:git:git@github.com:Institute-of-Marine-Research-NMD/commons-biotic-jaxb.git</url>
         <developerConnection>scm:git:git@github.com:Institute-of-Marine-Research-NMD/commons-biotic-jaxb.git</developerConnection>
-        <tag>commons-biotic-jaxb-1.1.1</tag>
+        <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <repository>
