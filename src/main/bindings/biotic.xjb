@@ -10,10 +10,12 @@
     <!--
     This document is referenced from the pom and is used to change the generated classes.
     The following has been added. -->
-    <jxb:bindings schemaLocation="../resources/bioticv1.xsd" node="/xs:schema">
+
         <jxb:globalBindings>
             <jxb:serializable uid="1" />
         </jxb:globalBindings>
+    <jxb:bindings schemaLocation="../resources/bioticv1.xsd" node="/xs:schema">
+
         <jxb:schemaBindings>
             <jxb:package name="no.imr.nmdapi.generic.nmdbiotic.domain.v1" />
         </jxb:schemaBindings>
@@ -34,4 +36,27 @@
         </jxb:bindings>
 
     </jxb:bindings>
+
+    <jxb:bindings schemaLocation="../resources/bioticv1_1.xsd" node="/xs:schema">
+        <jxb:schemaBindings>
+            <jxb:package name="no.imr.nmdapi.generic.nmdbiotic.domain.v1_1" />
+        </jxb:schemaBindings>
+        <jxb:bindings>
+            <namespace:prefix name="" />
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:complexType[@name='MissionsType']">
+            <annox:annotate target="package">@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters({@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = no.imr.nmdapi.generic.nmdbiotic.domain.v1.adapters.BigDecimalAdapter.class, type = java.math.BigDecimal.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value = no.imr.nmdapi.generic.nmdbiotic.domain.v1.adapters.BigIntegerAdapter.class, type = java.math.BigInteger.class)})</annox:annotate>
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="missions"/>
+            </annox:annotate>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:complexType[@name='MissionType']">
+            <annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="mission"/>
+            </annox:annotate>
+        </jxb:bindings>
+
+    </jxb:bindings>
+
 </jxb:bindings>

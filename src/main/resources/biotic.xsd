@@ -6,4 +6,5 @@
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
            <xs:import namespace="http://www.imr.no/formats/nmdbiotic/v1" schemaLocation="bioticv1.xsd" />
+           <xs:import namespace="http://www.imr.no/formats/nmdbiotic/v1.1" schemaLocation="bioticv1_1.xsd" />
 </xs:schema>
