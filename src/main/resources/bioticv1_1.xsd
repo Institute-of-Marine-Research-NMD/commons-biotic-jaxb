@@ -29,12 +29,12 @@
             <xs:element name="purpose" type="xs:string" minOccurs="0" />
             <xs:element name="fishstation" type="FishStationType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
-        <xs:attribute name="year" type="xs:string" use="required" />
         <xs:attribute name="missiontype" type="xs:string" use="required" />
-        <xs:attribute name="missiontypename" type="xs:string" use="optional" />
-        <xs:attribute name="callsignal" type="xs:string" use="optional" />
+        <xs:attribute name="year" type="xs:string" use="required" />
         <xs:attribute name="platform" type="xs:string" use="required" />
         <xs:attribute name="missionnumber" type="xs:string" use="required" />
+        <xs:attribute name="missiontypename" type="xs:string" use="optional" />
+        <xs:attribute name="callsignal" type="xs:string" use="optional" />
         <xs:attribute name="platformname" type="xs:string" use="optional"/>
     </xs:complexType>
 
@@ -126,7 +126,7 @@
             <xs:element name="prey" type="PreyType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="species" type="xs:string" use="required" />
-        <xs:attribute name="samplenumber" type="xs:integer" use="required" />
+        <xs:attribute name="samplenumber" type="xs:integer" use="optional" />
         <xs:attribute name="noname" type="xs:string" use="optional" />
         <xs:attribute name="aphia" type="xs:integer" use="optional" />
     </xs:complexType>
