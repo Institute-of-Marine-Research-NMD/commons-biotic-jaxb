@@ -23,10 +23,10 @@
     -->
     <xs:complexType name="MissionType">
         <xs:sequence>
-            <xs:element name="cruise" type="xs:string" />
-            <xs:element name="startdate" type="xs:string" />
-            <xs:element name="stopdate" type="xs:string" />
-            <xs:element name="purpose" type="xs:string" />
+            <xs:element name="cruise" type="xs:string" minOccurs="0" />
+            <xs:element name="startdate" type="xs:string" minOccurs="0" />
+            <xs:element name="stopdate" type="xs:string" minOccurs="0" />
+            <xs:element name="purpose" type="xs:string" minOccurs="0" />
             <xs:element name="fishstation" type="FishStationType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="year" type="xs:string" use="required" />
@@ -265,7 +265,7 @@
         <xs:sequence>
             <xs:element name="tagtype" type="xs:integer" minOccurs="0" />
         </xs:sequence>
-        <xs:attribute name="tagno" type="xs:string" use="required" />
+        <xs:attribute name="tagno" type="xs:integer" use="required" />
 
     </xs:complexType>
 
